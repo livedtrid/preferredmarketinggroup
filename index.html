@@ -43,18 +43,17 @@
         enterVRButton.disabled = !event.detail.supported;
       }, false);
       
-	  const arEvent = new CustomEvent('toggleAR', {});
+	const arEvent = new CustomEvent('toggleAR', {});
 	    
-	    const arClickEvent = document.createEvent('click', function (event) {
-        document.dispatchEvent(arEvent);
-      });
 	  
-      enterARButton.addEventListener(arClickEvent, false);
+       enterARButton.addEventListener('click', function (event) {
+        document.dispatchEvent(arEvent);
+      }, false);
       enterVRButton.addEventListener('click', function (event) {
         document.dispatchEvent(new CustomEvent('toggleVR', {}));
       }, false);
 	  
-	  enterARButton.dispatchEvent(arClickEvent);
+	  enterARButton.dispatchEvent('click');
     </script>
     <script src="gl-matrix-min.js"></script>
     <script src="webxr.js"></script>
