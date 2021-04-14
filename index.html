@@ -45,7 +45,7 @@
       
 	  const arEvent = new CustomEvent('toggleAR', {});
 	    
-	    const arClickEvent = new Event('click', function (event) {
+	    const arClickEvent = document.createEvent('click', function (event) {
         document.dispatchEvent(arEvent);
       });
 	  
