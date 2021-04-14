@@ -449,6 +449,7 @@
   }
 
   XRManager.prototype.UpdateXRCapabilities = function() {
+    if(this.isARSupported){this.toggleAr()}
     // Send browser capabilities to Unity.
     this.gameInstance.Module.WebXR.OnXRCapabilities(
       JSON.stringify({
